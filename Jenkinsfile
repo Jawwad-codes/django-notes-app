@@ -32,16 +32,6 @@ pipeline {
             }
         }
 
-        stage('Docker Compose Build') {
-            steps {
-                sh '''
-                    echo "===== BUILDING DOCKER IMAGE ====="
-
-                    docker-compose build
-                '''
-            }
-        }
-
         stage('Docker Compose Up') {
             steps {
                 sh '''
