@@ -9,11 +9,6 @@ pipeline {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/Jawwad-codes/django-notes-app.git'
-
-                sh '''
-                    echo "===== CODE CLONED ====="
-                    whoami
-                '''
             }
         }
 
