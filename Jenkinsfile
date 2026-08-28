@@ -15,8 +15,6 @@ pipeline {
         stage('Install Docker Compose') {
             steps {
                 sh '''
-                    echo "===== DOCKER VERSION ====="
-                    docker --version
 
                     echo "===== DOCKER COMPOSE VERSION ====="
                     docker-compose version
