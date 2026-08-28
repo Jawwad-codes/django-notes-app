@@ -25,7 +25,7 @@ pipeline {
                     echo "===== INSTALLING DOCKER COMPOSE ====="
 
                     sudo apt-get update
-                    sudo apt-get install -y docker-compose-plugin
+                    sudo apt-get install -y docker-compose
 
                     echo "===== DOCKER VERSION ====="
                     docker --version
