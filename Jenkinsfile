@@ -20,16 +20,11 @@ pipeline {
         stage('Install Docker Compose') {
             steps {
                 sh '''
-                    echo "===== INSTALLING DOCKER COMPOSE ====="
-
-                    sudo apt-get update
-                    sudo apt-get install -y docker-compose
-
                     echo "===== DOCKER VERSION ====="
                     docker --version
 
                     echo "===== DOCKER COMPOSE VERSION ====="
-                    docker compose version
+                    docker-compose version
                 '''
             }
         }
