@@ -13,8 +13,6 @@ pipeline {
                 sh '''
                     echo "===== CODE CLONED ====="
                     whoami
-                    pwd
-                    ls -la
                 '''
             }
         }
