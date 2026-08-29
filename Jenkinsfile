@@ -30,7 +30,7 @@ pipeline {
                 '''
             }
         }
-         stage('Push Image To Docker Hub') {
+        stage('Push Image To Docker Hub') {
             steps {
                 echo "===========PUSH IMAGE TO DOCKER HUB============"
                 withCredentials([usernamePassword('credentialsId':"jenkins",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
