@@ -1,9 +1,25 @@
-data/
-mysql/
-*.log
-.git/
+```dockerignore
+.git
 .gitignore
 .env
-__pycache__/
+.venv
+venv
+__pycache__
 *.pyc
-node_modules/
+*.pyo
+*.log
+
+# MySQL/database data
+data/
+*.sql
+*.sqlite3
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# IDE
+.vscode
+.idea
+```
