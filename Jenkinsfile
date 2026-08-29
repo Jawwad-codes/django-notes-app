@@ -32,12 +32,12 @@ pipeline {
         }
          stage('Push Image To Docker Hub') {
             steps {
-                sh '''
-                    echo "========PUSH THE IMAGE OF NOTES APP TO DOCKER HUB========"
-                    docker login
-                    docker image tage notes-app:latest jawwadnadeem/notes-app:latest
-                    docker push jawwadnadeem/notes-app:latest
-                '''
+                echo "===========PUSH IMAGE TO DOCKER HUB============"
+                withCredentials([usernamePassword('credentialsId':"jenkins",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
+                    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+                    sh "docker image tag notes-app:latest jawwadnadeem/notes-app:latest"
+                    sh "docker push jawwadnadeem/notes-app:latest"
+                }
             }
         }
 
