@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh '''
                     echo "======Build Images======"
-                    docker build -t notes-app:latest .
+                    docker buildx build -t notes-app:latest .
                 '''
             }
         }
