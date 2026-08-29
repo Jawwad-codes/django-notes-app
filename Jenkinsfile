@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh '''
                     echo "===== STARTING APPLICATION ====="
-                    docker build -t notes-app .
+                    docker images
                 '''
             }
         }
