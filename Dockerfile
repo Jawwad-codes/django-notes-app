@@ -10,7 +10,7 @@ RUN apt-get update && \
         pkg-config && \
     rm -rf /var/lib/apt/lists/*
 
-# Create virtual environment
+
 RUN python -m venv /opt/venv
 
 ENV PATH="/opt/venv/bin:$PATH"
