@@ -12,15 +12,6 @@ pipeline {
             }
         }
 
-        stage('Install Docker Compose') {
-            steps {
-                sh '''
-
-                    echo "===== DOCKER COMPOSE VERSION ====="
-                '''
-            }
-        }
-
         stage('Docker Compose Down') {
             steps {
                 sh '''
