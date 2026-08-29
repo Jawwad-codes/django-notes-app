@@ -11,6 +11,15 @@ pipeline {
                     url: 'https://github.com/Jawwad-codes/django-notes-app.git'
             }
         }
+        
+        stage('Docker Build image') {
+            steps {
+                sh '''
+                    echo "======Build Images======"
+                    docker build -t notes-app:latest .
+                '''
+            }
+        }
 
         stage('Docker Compose Down') {
             steps {
@@ -21,11 +30,13 @@ pipeline {
                 '''
             }
         }
-         stage('Docker Build') {
+         stage('Push Image To Docker Hub') {
             steps {
                 sh '''
-                    echo "===== STARTING APPLICATION ====="
-                    docker images
+                    echo "========PUSH THE IMAGE OF NOTES APP TO DOCKER HUB========"
+                    docker login
+                    docker image tage notes-app:latest jawwadnadeem/notes-app:latest
+                    docker push jawwadnadeem/notes-app:latest
                 '''
             }
         }
