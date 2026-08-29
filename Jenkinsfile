@@ -17,7 +17,6 @@ pipeline {
                 sh '''
 
                     echo "===== DOCKER COMPOSE VERSION ====="
-                    docker-compose version
                 '''
             }
         }
