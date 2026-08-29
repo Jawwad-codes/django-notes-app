@@ -1,0 +1,9 @@
+data/
+mysql/
+*.log
+.git/
+.gitignore
+.env
+__pycache__/
+*.pyc
+node_modules/
