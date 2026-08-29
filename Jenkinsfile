@@ -30,6 +30,14 @@ pipeline {
                 '''
             }
         }
+         stage('Docker Build') {
+            steps {
+                sh '''
+                    echo "===== STARTING APPLICATION ====="
+                    docker build -t notes-app .
+                '''
+            }
+        }
 
         stage('Docker Compose Up') {
             steps {
