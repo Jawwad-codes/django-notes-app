@@ -47,9 +47,6 @@ pipeline {
                     echo "===== STARTING APPLICATION ====="
 
                     docker-compose up -d
-
-                    echo "===== RUNNING CONTAINERS ====="
-                    docker-compose ps
                 '''
             }
         }
